@@ -1,0 +1,19 @@
+.menu-container{
+    display: grid;
+    grid-template-columns: repeat(2,700px);
+    background-color: lightblue;
+}
+.menu-item{
+    display: flex;
+    margin-left: 7rem;
+    margin-top: 3rem;
+    width: 80%;
+}
+.title-price{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+.decription{
+    margin-left: 17px;
+}
