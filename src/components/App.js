@@ -78,12 +78,36 @@ export default function App() {
         },
       ]
 const[menuItem,setMenuItem]=useState(data)
+const [filterMenuItem,setFilterMenuItem]=useState(data);
+
   return (
     <div>
       <div className="container">
         <h1 className="text-center">Our Menu</h1>
-            <NavBar></NavBar>
-            <Menu menuItem={menuItem} setMenuItem={setMenuItem}></Menu>
+            <button onClick={()=>{
+              setFilterMenuItem(data)
+            }}>All</button>
+            <button onClick={()=>{
+              const newArr=menuItem.filter((item)=>{
+                return item.category==='breakfast'
+              })
+              setFilterMenuItem(newArr)
+            }}>Breakfat</button>
+            <button onClick={()=>{
+              setFilterMenuItem(data.filter(item=>item.category==='lunch'))
+            }}>Lunch</button>
+            <button onClick={()=>{
+              setFilterMenuItem(data.filter(item=>item.category==='shakes'))
+            }}>Shakes</button>
+            <div className="menu-container">
+            {
+              filterMenuItem.map((item)=>{
+                return(
+                  <Menu title={item.title} desc={item.desc} id={item.id} category={item.category} img={item.img} price={item.price} key={item.id}></Menu>
+                )
+              })
+            }
+            </div>
       </div>
     </div>
   )

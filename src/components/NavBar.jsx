@@ -6,7 +6,9 @@ export default function NavBar() {
       <div className="nav-bar">
                 <nav>
                     <ul>
-                        <li><a href="#">All</a></li>
+                        <li><a href="#" onClick={()=>{
+                          
+                        }}>All</a></li>
                         <li><a href="#">Breakfast</a></li>
                         <li><a href="#">Lunch</a></li>
                         <li><a href="#">Shakes</a></li>
