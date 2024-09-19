@@ -1,30 +1,24 @@
 import React from 'react'
-import "../styles/Menu.css"
-export default function Menu({title,desc,price,img,id,category}) {
+
+const CompA = ({item}) => {
+
+    const{title, price, desc, category, img} = item
+    // console.log(title)
+
   return (
-    <div>
-             
-                <div className="menu-item" key={id}>
-                <div className="img">
-                    <img src="" alt="" />
-                </div>
-                
-                <div className="info-data">
-                    <div className="title-price">
+    <div data-test-id={"menu-item-" + category} style={{display:"flex", border:"1px solid black", width:"500px"}}>
+        <img src={img} alt='broken'/>
 
-                    <h3>{title}</h3>
-                    <p>${price}</p>
-
-                    </div>
-
-                    <div className="decription">
-                        <p>{desc}</p>
-                    </div>
-
-                </div>
-             
+        <div>
+            <div>
+                <h3>{title}</h3>
+                <span>{price}</span>
             </div>
+
+            <p>{desc}</p>
         </div>
+    </div>
   )
 }
 
+export default CompA
